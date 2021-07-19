@@ -1,5 +1,7 @@
 entity display7segment is 
 
+--Define input and output
+
 port (
 
 A, B, C, D : in bit;
@@ -9,6 +11,8 @@ h, i, j, k, l, m, n : out bit
 );
 
 end display7segment;
+
+--Define architecture about seven-segment display.
 
 architecture arqdisplay of display7segment is 
 
