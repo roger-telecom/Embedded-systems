@@ -1,0 +1,25 @@
+entity logic1 is 
+
+--Define inputs and outputs.
+
+port (
+
+a, b, c, d : in bit; 
+s1, s2, s3, s4 : out bit
+
+);
+
+end logic1;
+
+--Architecture about logic gates.
+
+architecture test of logic1 is
+
+begin
+
+s1 <= a or (not b);
+s2 <= a or ((not b) and c) or d;
+s3 <= (a or (not b)) and (c or d);
+s4 <= (a or (not b)) and ((not(c or (a and d))));
+
+end test;
