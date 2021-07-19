@@ -1,0 +1,25 @@
+entity display7segment is 
+
+port (
+
+A, B, C, D : in bit;
+
+h, i, j, k, l, m, n : out bit
+
+);
+
+end display7segment;
+
+architecture arqdisplay of display7segment is 
+
+begin
+
+h <= ((not A) and C) or (B and C) or (A and (not B) and (not C)) or ((not A) and B and D) or (A and (not D)) or ((not B) and (not D));
+i <= ((not A) and (not B)) or ((not B) and (not D)) or (A and (not C) and D) or ((not A) and (not C) and (not D)) or ((not A) and C and D);
+j <= ((not A) and B) or (A and (not B)) or ((not C) and D) or ((not A) and (not C)) or ((not A) and D);
+k <= (A and (not C)) or ((not A) and (not B) and (not D)) or (B and (not C) and D) or (B and C and (not D)) or ((not B) and C and D); 
+l <= ((not B) and (not D)) or (C and (not D)) or (A and C) or (A and B);
+m <= (A and (not B)) or ((not C) and (not D)) or (B and (not D)) or (A and C) or ((not A) and B and (not C));
+n <= (A and (not B)) or (A and D) or ((not A) and B and (not C)) or ((not B) and C) or (C and (not D));
+
+end arqdisplay;
